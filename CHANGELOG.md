@@ -1,3 +1,7 @@
+### 0.0.6
+- Fixed crashing when screen changes resolution
+- Added option to disable printing capture FPS
+
 ### 0.0.5
 - Fixed black screen for rotated display
 - Added delay on start to prevent black screenshot 

@@ -24,6 +24,7 @@ class betterDXCamera:
         region: Tuple[int, int, int, int],
         output_color: str = "RGB",
         max_buffer_len=64,
+        print_capture_fps: bool = False,
     ) -> None:
         self._output: Output = output
         self._device: Device = device
@@ -46,6 +47,7 @@ class betterDXCamera:
         self._validate_region(self.region)
 
         self.max_buffer_len = max_buffer_len
+        self.print_capture_fps = print_capture_fps
         self.is_capturing = False
 
         self.__thread = None
@@ -217,9 +219,11 @@ class betterDXCamera:
         if capture_error is not None:
             self.stop()
             raise capture_error
-        print(
-            f"Screen Capture FPS: {int(self.__frame_count/(time.perf_counter() - self.__capture_start_time))}"
-        )
+        
+        if self.print_capture_fps:
+            print(
+                f"Screen Capture FPS: {int(self.__frame_count/(time.perf_counter() - self.__capture_start_time))}"
+            )
 
     def _rebuild_frame_buffer(self, region: Tuple[int, int, int, int]):
         if region is None:
