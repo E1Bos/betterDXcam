@@ -4,9 +4,9 @@ from typing import Tuple
 from threading import Thread, Event, Lock
 import comtypes
 import numpy as np
-from dxcam.core import Device, Output, StageSurface, Duplicator
-from dxcam.processor import Processor
-from dxcam.util.timer import (
+from betterdxcam.core import Device, Output, StageSurface, Duplicator
+from betterdxcam.processor import Processor
+from betterdxcam.util.timer import (
     create_high_resolution_timer,
     set_periodic_timer,
     wait_for_timer,

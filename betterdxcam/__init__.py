@@ -1,7 +1,7 @@
 import weakref
 import time
-from dxcam.dxcam import DXCamera, Output, Device
-from dxcam.util.io import (
+from betterdxcam.betterdxcam import DXCamera, Output, Device
+from betterdxcam.util.io import (
     enum_dxgi_adapters,
     get_output_metadata,
 )
