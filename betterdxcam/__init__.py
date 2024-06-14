@@ -41,6 +41,7 @@ class DXFactory(metaclass=Singleton):
         region: tuple = None,
         output_color: str = "RGB",
         max_buffer_len: int = 64,
+        print_capture_fps: bool = False,
     ):
         device = self.devices[device_idx]
         if output_idx is None:
@@ -74,6 +75,7 @@ class DXFactory(metaclass=Singleton):
             region=region,
             output_color=output_color,
             max_buffer_len=max_buffer_len,
+            print_capture_fps=print_capture_fps,
         )
         self._camera_instances[instance_key] = camera
         time.sleep(0.1)  # Fix for https://github.com/ra1nty/DXcam/issues/31
@@ -108,6 +110,7 @@ def create(
     region: tuple = None,
     output_color: str = "RGB",
     max_buffer_len: int = 64,
+    print_capture_fps: bool = False,
 ):
     return __factory.create(
         device_idx=device_idx,
@@ -115,6 +118,7 @@ def create(
         region=region,
         output_color=output_color,
         max_buffer_len=max_buffer_len,
+        print_capture_fps=print_capture_fps,
     )
 
 

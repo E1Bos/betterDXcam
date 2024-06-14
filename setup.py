@@ -1,11 +1,13 @@
 from setuptools import find_packages, setup
 
+VERSION = "0.0.8"
+
 with open("README.md", "r", encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
     name="betterDXcam",
-    version="0.0.8",
+    version=VERSION,
     description = "A Python high-performance screenshot library for Windows use Desktop Duplication API",
     packages=find_packages(),
     long_description=long_description,

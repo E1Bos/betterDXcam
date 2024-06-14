@@ -187,6 +187,7 @@ class betterDXCamera:
                             self.__frame_buffer = np.ndarray(
                                 (self.max_buffer_len, *frame_shape), dtype=np.uint8
                             )
+                            self.region = region
                         
                         self.__frame_buffer[self.__head] = frame
                         if self.__full:
