@@ -11,6 +11,7 @@ BetterDXcam is a fork of [DXcam](https://github.com/ra1nty/DXcam), a Python high
 
 BetterDXcam provides these improvements over DXcam:
 - Fixed crashing when screen changes resolution
+- Ability to disable printing the screen capture FPS
 
 Compared to these existed solutions, DXcam provides:
 - Way faster screen capturing speed (> 240Hz)
