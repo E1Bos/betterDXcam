@@ -16,7 +16,7 @@ from betterdxcam.util.timer import (
 )
 
 
-class DXCamera:
+class betterDXCamera:
     def __init__(
         self,
         output: Output,
@@ -176,6 +176,16 @@ class DXCamera:
                 frame = self._grab(region)
                 if frame is not None:
                     with self.__lock:
+                        # Credit to https://github.com/elmoiv for this code
+                        # Reconstruct frame buffer when resolution change
+                        if frame.shape[0] != self.height or frame.shape[1] != self.width:
+                            self.width, self.height = frame.shape[1], frame.shape[0]
+                            region = (0, 0, frame.shape[1], frame.shape[0])
+                            frame_shape = (region[3] - region[1], region[2] - region[0], self.channel_size)
+                            self.__frame_buffer = np.ndarray(
+                                (self.max_buffer_len, *frame_shape), dtype=np.uint8
+                            )
+                        
                         self.__frame_buffer[self.__head] = frame
                         if self.__full:
                             self.__tail = (self.__tail + 1) % self.max_buffer_len

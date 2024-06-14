@@ -1,6 +1,6 @@
 import weakref
 import time
-from betterdxcam.betterdxcam import DXCamera, Output, Device
+from betterdxcam.betterdxcam import betterDXCamera, Output, Device
 from betterdxcam.util.io import (
     enum_dxgi_adapters,
     get_output_metadata,
@@ -68,7 +68,7 @@ class DXFactory(metaclass=Singleton):
 
         output = self.outputs[device_idx][output_idx]
         output.update_desc()
-        camera = DXCamera(
+        camera = betterDXCamera(
             output=output,
             device=device,
             region=region,
