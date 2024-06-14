@@ -1,4 +1,4 @@
-### 0.0.6
+### 0.0.7
 - Fixed crashing when screen changes resolution
 - Added option to disable printing capture FPS
 
