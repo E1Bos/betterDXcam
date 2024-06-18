@@ -130,7 +130,7 @@ class betterDXCamera:
         )
         self.__thread = Thread(
             target=self.__capture,
-            name="DXCamera",
+            name="betterDXCamera",
             args=(region, target_fps, video_mode),
         )
         self.__thread.daemon = True

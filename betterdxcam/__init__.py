@@ -59,7 +59,7 @@ class DXFactory(metaclass=Singleton):
             print(
                 "".join(
                     (
-                        f"You already created a DXCamera Instance for Device {device_idx}--Output {output_idx}!\n",
+                        f"You already created a betterDXCamera Instance for Device {device_idx}--Output {output_idx}!\n",
                         "Returning the existed instance...\n",
                         "To change capture parameters you can manually delete the old object using `del obj`.",
                     )
@@ -78,7 +78,7 @@ class DXFactory(metaclass=Singleton):
             print_capture_fps=print_capture_fps,
         )
         self._camera_instances[instance_key] = camera
-        time.sleep(0.1)  # Fix for https://github.com/ra1nty/DXcam/issues/31
+        time.sleep(0.1)
         return camera
 
     def device_info(self) -> str:
